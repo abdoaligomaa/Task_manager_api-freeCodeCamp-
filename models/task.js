@@ -1,7 +1,8 @@
 const mongoose=require('mongoose')
+require('dotenv').config()
 
 // connect to db
-const URL='mongodb+srv://abdoAli:1072000@cluster0.mikwk.mongodb.net/task_manager_api_freecodecamp?retryWrites=true&w=majority'
+const URL=process.env.MONGO_URL
 mongoose.connect(URL).then(console.log('db is connected'))
 
 const taskSchema=new mongoose.Schema({
