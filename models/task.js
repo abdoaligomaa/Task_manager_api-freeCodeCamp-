@@ -8,7 +8,7 @@ mongoose.connect(URL).then(console.log('db is connected'))
 const taskSchema=new mongoose.Schema({
     name:{
         type:String,
-        required:true,
+        required:[true,'you should Enter Name '],
         trim:true
     },
     completed:{
