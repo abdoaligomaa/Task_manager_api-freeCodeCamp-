@@ -6,6 +6,11 @@ const getAllTasks=async(req,res)=>{
     res.json({tasks:tasks})
 }
 
+const getTaskById=async(req,res)=>{
+    const task=await Task.findById(req.params.id)
+    res.json({task})
+}
+
 const creatNewTask=async(req,res)=>{
     const task =await Task({
         name:req.body.name,
@@ -26,4 +31,5 @@ module.exports={
     creatNewTask,
     deleteTask,
     updateTask,
+    getTaskById,
 }
