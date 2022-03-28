@@ -6,8 +6,15 @@ const URL=process.env.MONGO_URL
 mongoose.connect(URL).then(console.log('db is connected'))
 
 const taskSchema=new mongoose.Schema({
-    name:String,
-    completed:Boolean
+    name:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    completed:{
+        type:Boolean,
+        default:false,
+    }
 })
 
 const task=mongoose.model('task',taskSchema)
