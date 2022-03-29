@@ -4,7 +4,7 @@ const tasks=require('./routers/task')
 const notFound=require('./middleware/error')
 const handelError=require('./middleware/error-handling')
 
-const port= 10101
+const port= process.env.PORT||3000
 
 // meddlewar 
 app.use(express.json())
