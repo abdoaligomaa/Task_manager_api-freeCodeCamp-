@@ -2,6 +2,7 @@ const express=require('express')
 const app=express()
 const tasks=require('./routers/task')
 const notFound=require('./middleware/error')
+const handelError=require('./middleware/error-handling')
 
 const port= 10101
 
@@ -10,6 +11,7 @@ app.use(express.json())
 app.use(express.static('./public'))
 app.use('/api/v1/tasks',tasks)
 app.use(notFound)
+app.use(handelError)
 // api get all tasks
 // api creat new task 
 // api get task by id 
