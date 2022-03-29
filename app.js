@@ -6,6 +6,7 @@ const port= 10101
 
 // meddlewar 
 app.use(express.json())
+app.use(express.static('./public'))
 app.use('/api/v1/tasks',tasks)
 // api get all tasks
 // api creat new task 
@@ -13,8 +14,10 @@ app.use('/api/v1/tasks',tasks)
 // api remove task by id 
 // api update task by id 
 // api get all tasks
-app.get('/',(req,res)=>{
-    res.send('hellow task manager api ')
-})
+
+
+// app.get('/',(req,res)=>{
+//     res.send('hellow task manager api ')
+// })
 
 app.listen(port,()=>console.log(`server is listen an port ${port}.....`))
