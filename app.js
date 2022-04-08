@@ -4,10 +4,27 @@ const tasks=require('./routers/task')
 const notFound=require('./middleware/error')
 const handelError=require('./middleware/error-handling')
 
+const xss=requuire('xss-clean')
+const hemlet=requuire('hemlet')
+const cors=requuire('cors')
+const rateLimit=requuire('express-rate-limit')
+
 const port= process.env.PORT||4000
 
+app.set('trust proxy',1)
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+})
 // meddlewar 
+app.use(limiter)
 app.use(express.json())
+app.use(cors())
+app.use(hemlet())
+app.use(xss())
+
 app.use(express.static('./public'))
 app.use('/api/v1/tasks',tasks)
 app.use(notFound)
