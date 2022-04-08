@@ -4,10 +4,10 @@ const tasks=require('./routers/task')
 const notFound=require('./middleware/error')
 const handelError=require('./middleware/error-handling')
 
-const xss=requuire('xss-clean')
-const hemlet=requuire('hemlet')
-const cors=requuire('cors')
-const rateLimit=requuire('express-rate-limit')
+const xss=require('xss-clean')
+const hemlet=require('hemlet')
+const cors=require('cors')
+const rateLimit=require('express-rate-limit')
 
 const port= process.env.PORT||4000
 
