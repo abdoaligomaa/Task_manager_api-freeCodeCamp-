@@ -5,7 +5,7 @@ const notFound=require('./middleware/error')
 const handelError=require('./middleware/error-handling')
 
 const xss=require('xss-clean')
-const hemlet=require('hemlet')
+const hemlet=require('helmet')
 const cors=require('cors')
 const rateLimit=require('express-rate-limit')
 
