@@ -4,17 +4,16 @@ test('hello world',()=>{
 
 })
 // failed test
-test('fail',()=>{
-    throw Error('error in this function')
-})
 
 test('calc fuction return the the total money',()=>{
     const total=calcTip(10,.3)
     // if(total!==13)throw Error('error in calc the tip')
     expect(total).toBe(13)
 })
-
-test('should return the sum instead of async function',()=>{
-    const sum=addAsync(1,2)
-    expect(sum).toBe(3)
+// you should put pramater to test function when you work with async funcion
+test('should return the sum instead of async function',(done)=>{
+    const Sum=setTimeout(() => {
+        expect(1).toBe(1)
+        done()
+    }, 1000)
 })
