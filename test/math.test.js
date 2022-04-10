@@ -1,8 +1,5 @@
 const { expectCt } = require('helmet')
-const {calcTip,addAsync}=require('./math')
-test('hello world',()=>{
 
-})
 // failed test
 
 test('calc fuction return the the total money',()=>{
