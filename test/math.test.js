@@ -14,3 +14,8 @@ test('should return the sum instead of async function',(done)=>{
         done()
     }, 1000)
 })
+
+test('check for length of array',()=>{
+    const arr=[1,2,3]
+    if(arr.length!==3)throw Error('error')
+})
