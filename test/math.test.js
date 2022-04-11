@@ -36,9 +36,14 @@ describe('add two number',()=>{
     })
 })
 
-// use only two make a test only this function
-
+// use only to make a test only this function
 test.only('calc fuction return the the total money',()=>{
+    const total=calcTip(10,.3)
+    expect(total).toBe(13)
+})
+
+// use skip to make all tests and skip this test
+test.skip('calc fuction return the the total money',()=>{
     const total=calcTip(10,.3)
     expect(total).toBe(13)
 })
