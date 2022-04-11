@@ -1,4 +1,5 @@
 const { expectCt } = require('helmet')
+const {calcTip}=require('./math')
 
 
 // test(name,fn,timeout)
@@ -33,4 +34,11 @@ describe('add two number',()=>{
         const arr=[1,2,3]
         if(arr.length!==3)throw Error('error')
     })
+})
+
+// use only two make a test only this function
+
+test.only('calc fuction return the the total money',()=>{
+    const total=calcTip(10,.3)
+    expect(total).toBe(13)
 })
