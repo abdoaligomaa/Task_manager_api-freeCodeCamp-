@@ -47,3 +47,11 @@ test.skip('calc fuction return the the total money',()=>{
     const total=calcTip(10,.3)
     expect(total).toBe(13)
 })
+
+/* 
+    there are many features you can use in the test
+    beforeAll
+    beforeEach 
+    afterAll
+    afterEach
+*/
