@@ -11,7 +11,7 @@ const rateLimit=require('express-rate-limit')
 
 // swagger 
 const swaggerUI=require('swagger-ui-express')
-const swaggerDocument = require('./swagger.json')
+const swaggerDocument = require('./swagger.yml')
 app.use('/api/v1/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 
