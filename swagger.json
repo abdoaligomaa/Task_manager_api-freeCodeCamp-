@@ -12,7 +12,7 @@
       }
     ],
     "paths": {
-      "/users/{id}": {
+      "/tasks/{id}": {
         "parameters": [
           {
             "in": "path",
