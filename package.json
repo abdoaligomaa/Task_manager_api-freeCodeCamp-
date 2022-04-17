@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js -e js,yml",
+    "dev": "nodemon app.js -e js,yml,html",
     "test": "jest --watch"
   },
   "keywords": [],

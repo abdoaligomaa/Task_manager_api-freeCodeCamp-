@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "http//task-manager-api-107a.herokuapp.com/api/v1",
+        "url": "https://task-manager-api-107a.herokuapp.com/api/v1",
         "variables": {}
       }
     ],
