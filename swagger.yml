@@ -1,0 +1,113 @@
+openapi: 3.0.0
+info:
+  title: Task Manager (Abdo Ali)
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://task-manager-api-107a.herokuapp.com/api/v1
+  variables: {}
+paths:
+  
+  /users/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The user ID.
+
+    get:
+      tags:
+      - tasks
+      summary: get task by id
+      operationId: gettaskbyid
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    delete:
+      tags:
+      - tasks
+      summary: delete task by id
+      operationId: deletetaskbyid
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    patch:
+      tags:
+      - tasks
+      summary: update task by id
+      operationId: updatetaskbyid
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          text/plain:
+            schema:
+              type: object
+              example: {}
+            example: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /tasks:
+    get:
+      tags:
+      - tasks
+      summary: get all tasks
+      operationId: getalltasks
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    post:
+      tags:
+      - tasks
+      summary: creat new task
+      operationId: creatnewtask
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/creatnewtaskrequest'
+            example:
+              name: ' testing '
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    creatnewtaskrequest:
+      title: creatnewtaskrequest
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+      example:
+        name: ' testing '
+tags:
+- name: tasks
+  description: ''

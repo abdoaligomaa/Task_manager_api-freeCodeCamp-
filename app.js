@@ -9,6 +9,12 @@ const hemlet=require('helmet')
 const cors=require('cors')
 const rateLimit=require('express-rate-limit')
 
+// swagger 
+const swaggerUI=require('swagger-ui-express')
+const swaggerDocument = require('./swagger.json')
+app.use('/api/v1/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+
+
 const port= process.env.PORT||4000
 
 app.set('trust proxy',1)
